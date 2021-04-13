@@ -1,0 +1,41 @@
+<div [@dialog] *ngIf="visible" class="dialog" [style.color]="class.base.color" [style.background]="class.base.background"
+[style.--box-shadow-color]="class.base.color">
+  <ng-content></ng-content>
+  <button mat-fab color="primary" *ngIf="closable" (click)="close()" [style.color]="class.base.color" 
+    class=" arrow-icon d-flex align-items-center justify-content-center p-1 dialog__close-btn"
+    aria-label="Example icon button with a home icon">
+    <mat-icon class="iconM">close</mat-icon>
+  </button>
+  <div class="container">
+    <div class="row no-gutters align-items-center">
+      <div class="col-3">
+        <img class="image" src="{{getUrl(element.image, false)}}" alt="Photo of CondorsoftecProject">
+      </div>
+      <div class="col-9">
+        <h2 class="d-inline-block m-0 ">{{element.name}}</h2>
+        <h4 class="m-0 font-weight-light">{{element.type}}</h4>
+      </div>
+    </div>
+    <mat-divider class="divider mt-2 mb-2"></mat-divider>
+    <div class="row text-justify">
+      <div class="col">
+        <p>{{element.description}}</p>
+      </div>
+    </div>
+    <div class="row text-left">
+      <div class="col" *ngIf="element.achievements" style="min-width: 200px;">
+        <p>Logros:</p>
+        <ul>
+          <li *ngFor="let logro of  element.achievements" class="text-capitalize"> {{logro}}</li>
+        </ul>
+      </div>
+      <div class="col" *ngIf="element.tech"  style="min-width: 200px;">
+        <p>Tecnología:</p>
+        <ul>
+          <li *ngFor="let tech of  element.tech" class="text-capitalize"> {{tech}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="visible" class="overlay" (click)="close()"></div>

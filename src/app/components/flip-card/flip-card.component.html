@@ -1,0 +1,21 @@
+<div class="container2 align-items-start" >
+    <div [ngClass]="toggleProperty ? 'flipped' : ''" class="card mat-elevation-z5">
+      <div  [style.background]="getUrl(element.image)"  class="front mat-elevation-z5"(click)="toggle()">
+        <ng-content select="flip-card-front"></ng-content>
+      </div>
+      <div class="back"  (click)="toggle()">
+        <ng-content select="flip-card-back" class="contentBack "></ng-content>       
+        <div class="limit row align-items-center justify-content-end mr-2">       
+          <!-- <button mat-fab color="warn"  class=" arrow-icon d-flex align-items-center justify-content-center mr-1"  
+          aria-label="Example icon button with a home icon">
+            <mat-icon  class="iconM">arrow_back</mat-icon>
+          </button> -->
+          <button mat-fab color="warn"  (click)="changeDialog(element)" class=" arrow-icon d-flex align-items-center justify-content-center p-1"  aria-label="Example icon button with a home icon">
+            <mat-icon  class="iconM">add</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-dialog [(visible)]="showDialog" [element]="elementAux"> </app-dialog>
