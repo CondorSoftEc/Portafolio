@@ -19,33 +19,98 @@
   min-height: 200px;
   width: 90%;
   max-width: 520px;
+  max-height: calc(100vh - 40px);
   background-color: #fff;
-  padding: 12px;
   border-radius: 20px;
   --box-shadow-color: red;
-    box-shadow: 0px 0px 50px -15px var(--box-shadow-color);
+    box-shadow: 0px 0px 30px -15px var(--box-shadow-color);
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }::-webkit-scrollbar {
+    display: none;
+  
 }
 
 @media (min-width: 768px) {
   .dialog {
     top: 40px;
+    max-height: calc(100vh - 80px);
+  }
+}
+.wrapperButton{
+  position:absolute;
+  top: 15px;
+  right: 40px;
+  .dialog__close-btn {
+    position:fixed;
+    font-size: 1.2em;
+    height: 30px;
+    width: 30px;
+    z-index: 3;
   }
 }
 
-.dialog__close-btn {
-  border: 0;
-  background: none;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 1.2em;
-  height: 30px;
-  width: 30px;
+
+
+.container{ 
+  .header{
+    border-radius: 0px 20px 0px 20px;
+    position: relative;
+    .inverseBorder{
+      content: "";
+      position: absolute;
+      background-color: transparent;
+      bottom: -70px;
+      right: 20px;
+      height: 70px;
+      width: 25px;
+      border-top-right-radius: 25px;
+      --box-shadow-color: transparent;
+        box-shadow: 0 -25px 0 0 var(--box-shadow-color);
+  
+  }
+  .image{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .divider{
+    width: 60%;
+      margin: auto;
+  }
+
+  }
+
+  .content{
+    position: relative;
+    border-right: 20px solid;
+    .contentWrapper{   
+      border-right: 20px solid;
+      border-color: transparent;
+      border-radius : 0px 20px 20px 0px;
+    } 
+  }
+
+
+  .end{
+    position: relative;
+    border-radius: 20px 0px 20px 0px;
+    .inverseBorder2{
+      content: "";
+      position: absolute;
+      background-color: transparent;
+      top: -70px;
+      right: 20px;
+      height: 70px;
+      width: 25px;
+      border-bottom-right-radius: 25px;
+      --box-shadow-color: blue;
+        box-shadow: 0 25px 0 0 var(--box-shadow-color);
+    }
+  }
+
 }
 
-.image{
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-}

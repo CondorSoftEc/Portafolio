@@ -1,39 +1,69 @@
-<div [@dialog] *ngIf="visible" class="dialog" [style.color]="class.base.color" [style.background]="class.base.background"
-[style.--box-shadow-color]="class.base.color">
-  <ng-content></ng-content>
-  <button mat-fab color="primary" *ngIf="closable" (click)="close()" [style.color]="class.base.color" 
-    class=" arrow-icon d-flex align-items-center justify-content-center p-1 dialog__close-btn"
-    aria-label="Example icon button with a home icon">
-    <mat-icon class="iconM">close</mat-icon>
-  </button>
-  <div class="container">
-    <div class="row no-gutters align-items-center">
-      <div class="col-3">
-        <img class="image" src="{{getUrl(element.image, false)}}" alt="Photo of CondorsoftecProject">
-      </div>
-      <div class="col-9">
-        <h2 class="d-inline-block m-0 ">{{element.name}}</h2>
-        <h4 class="m-0 font-weight-light">{{element.type}}</h4>
+<div [@dialog] *ngIf="visible" class="dialog pl-3" [style.color]="theme.base.color"
+  [style.background]="theme.base.background" [style.--box-shadow-color]="theme.base.color">
+  <div class="wrapperButton">
+    <button mat-fab color="primary" *ngIf="closable" (click)="close()" [style.color]="theme.base.color"
+      [style.background]="theme.base.background"
+      class="d-flex align-items-center justify-content-center  dialog__close-btn"
+      aria-label="Example icon button with a home icon">
+      <mat-icon class="iconM">close</mat-icon>
+    </button>
+  </div>
+  <div class="container p-0">
+    <div class=" header p-3" [style.background]="theme.surface.background">
+      <div class="row no-gutters align-items-center">
+        <div class="inverseBorder" [style.--box-shadow-color]="theme.surface.background">
+        </div>
+        <div class="col-3">
+          <img class="image" src="{{getUrl(element.image, false)}}" alt="Photo of CondorsoftecProject">
+        </div>
+        <div class="col-9">
+          <h2 class="d-inline-block m-0 ">{{element.name}}</h2>
+          <h4 class="m-0 font-weight-light">{{element.type}}</h4>
+          <mat-divider class="divider mt-2 mb-2" [style.background]="theme.surface.divider"></mat-divider>
+          <mat-icon *ngFor="let ref of element.references">{{ref.icon}}</mat-icon>
+        </div>
       </div>
     </div>
-    <mat-divider class="divider mt-2 mb-2"></mat-divider>
-    <div class="row text-justify">
-      <div class="col">
-        <p>{{element.description}}</p>
+    <div class='content p-3' [style.border-color]="theme.surface.background">
+      <div class="row mb-3">
+        <div class="col">
+          <p class="text-uppercase font-weight-bold d-flex align-items-center">Tecnología usada
+          </p>
+          <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+            <mat-chip class="example-box text-uppercase" cdkDrag *ngFor="let tech of element.tech"
+              [style.background]="theme.base.color" [style.color]="theme.base.background">
+              {{tech}}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+      <div class="row text-justify">
+        <div class="col">
+          <p>{{element.description}}</p>
+        </div>
       </div>
     </div>
-    <div class="row text-left">
-      <div class="col" *ngIf="element.achievements" style="min-width: 200px;">
-        <p>Logros:</p>
-        <ul>
-          <li *ngFor="let logro of  element.achievements" class="text-capitalize"> {{logro}}</li>
-        </ul>
+    <div class="end p-3" [style.background]="theme.surface.background">
+      <div class="inverseBorder2" [style.--box-shadow-color]="theme.surface.background"></div>
+      <div class="row text-left">
+        <div class="col" *ngIf="element.achievements">
+          <div class="d-flex align-items-center">
+            <p class="text-uppercase font-weight-bold d-flex align-items-center">Logros <mat-icon class="ml-1">
+                emoji_events</mat-icon>
+            </p>
+          </div>
+          <ul>
+            <li *ngFor="let logro of  element.achievements" class="text-capitalize"> {{logro}}</li>
+          </ul>
+        </div>
       </div>
-      <div class="col" *ngIf="element.tech"  style="min-width: 200px;">
-        <p>Tecnología:</p>
-        <ul>
-          <li *ngFor="let tech of  element.tech" class="text-capitalize"> {{tech}}</li>
-        </ul>
+      <div class="row" *ngIf="element.captures">
+        <div class="col">
+          <p class="text-uppercase font-weight-bold d-flex align-items-left">Capturas de pantalla</p>
+          <ng-image-slider [manageImageRatio]="true" [imageSize]="{width: '30%', height: '200px', space: 4}"
+            [infinite]="true" [animationSpeed]="0.5"  [images]="element.captures" #nav>
+          </ng-image-slider>
+        </div>
       </div>
     </div>
   </div>

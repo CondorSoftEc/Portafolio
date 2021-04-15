@@ -1,5 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Theme } from 'src/app/models/color-scheme';
+import { ColorsService } from 'src/app/services/colors.service';
 
 @Component({
   selector: 'app-dialog',
@@ -17,23 +19,17 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
     ])
   ]
 })
-export class DialogComponent implements OnInit {
+export class DialogComponent  {
   @Input() closable = true;
   @Input() element! : any;
-  class : any;
+  theme : Theme;
   @Input() visible!: boolean;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private color : ColorsService) {
+    this.theme = this.color.theme
+   }
 
-  ngOnInit(): void {
-    let temp  = localStorage.getItem('class')
-    if (temp){
-      this.class =  JSON.parse(temp)
-    }
-   
-    console.log(this.element)
-  }
 
   close() {
     this.visible = false;
@@ -41,7 +37,6 @@ export class DialogComponent implements OnInit {
   }
 
   getUrl(url : string, asBackground : boolean = true){
-    console.log(this.element)
     return asBackground ? "url("+url+")" + " center center/cover no-repeat" : url
   }
 }

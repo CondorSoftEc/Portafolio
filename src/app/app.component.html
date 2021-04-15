@@ -28,12 +28,12 @@
           </div>
           <div class="row no-gutters justify-content-center">
             <div class="col-6 d-flex justify-content-end text-wrap">
-              <button mat-button class="try pr-1" (click)="changeMode('dark')">
+              <button mat-button class="p-0 pr-1" (click)="changeMode('dark')">
                 Tema oscuro <button mat-mini-fab [style.background]="'black'" class="colorButton2"> </button>
               </button>
             </div>
             <div class="col-6 d-flex justify-content-start">
-              <button mat-button class="try  pl-1" (click)="changeMode('light')">
+              <button mat-button class="p-0  pl-1" (click)="changeMode('light')">
                 <button mat-mini-fab color="light" class="colorButton2"> </button> Tema claro
               </button>
             </div>
@@ -51,8 +51,9 @@
 
   </div>
 </div>
+<!-- componente de selector de color -->
 
-<!-- main -->
+<!-- Toolbar -->
 <mat-toolbar [style.color]="colors.base.color" [style.background]="colors.base.background" class="pl-3 pr-4">
   <button mat-icon-button *ngIf="sidenav && sidenav.mode === 'over'" (click)="sidenav.toggle()">
     <mat-icon *ngIf="!sidenav.opened">
@@ -83,13 +84,16 @@
     <button mat-menu-item>Español</button>
   </mat-menu>
 </mat-toolbar>
+<!-- Toolbar -->
+
+<!-- main -->
 <mat-sidenav-container [style.color]="colors.base.color" [style.background]="colors.base.background">
   <mat-sidenav class="mat-elevation-z8" mode="side" opened [ngClass]="colors.sidenav.type">
     <img class="avatar mat-elevation-z8"
       src="https://depor.com/resizer/BNizGNSwRiRgEjZbirhaF9Q1y2Y=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/43YDBKGVYVGFZATETE5PT4JWCM.jpg" />
     <h4 class="name">Equipo Condorsoft</h4>
     <p class="designation">Desarrollo de software</p>
-    <mat-divider></mat-divider>
+    <mat-divider class="m-3" [style.background]="colors.sidenav.color"></mat-divider>
     <button mat-button class="menu-button mb-3" *ngFor="let link of links" [routerLink]="link.path">
       <mat-icon>{{link.icon}}</mat-icon>
       <span>{{ link.name }}</span>
@@ -102,3 +106,4 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<!-- main -->

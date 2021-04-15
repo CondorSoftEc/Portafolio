@@ -3,6 +3,8 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
 
 import { MatSidenav } from '@angular/material/sidenav';
+import { Theme } from './models/color-scheme';
+import { ColorsService } from './services/colors.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,8 @@ import { MatSidenav } from '@angular/material/sidenav';
       state(
         'closed',
         style({
-          opacity: '0'
+          opacity: '0',
+          visibility : 'hidden'
         })
       ),
       transition('open => closed', [animate('500ms ease-out')]),
@@ -33,11 +36,10 @@ export class AppComponent {
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
   @ViewChild('colorCard') input!: ElementRef<HTMLInputElement>;
   @ViewChild('buttonSettings') buttonSettings!: ElementRef<HTMLInputElement>;
+
   panelOpenState = false;
   isOpen = false;
   
-  title = 'portafolio';
-
   links = [
     {
       name: 'Acerca de nosotros',
@@ -55,43 +57,13 @@ export class AppComponent {
       icon: 'devices'
     }
   ]
-
-  darkBase = {
-    base : {
-      color: "white",
-      background:"black"
-    },
-    surface : {
-      color: "white",
-      background:"#1a1a1d"
-    }
-  }
-
-  lightBase = {
-    base : {
-      color: "black",
-      background:"white"
-    },
-    surface : {
-      color: "black",
-      background:"#eae3db"
-    }
-  }
-
-  colors = {
-    sidenav : {
-      type:"fourthSidenav"
-    },
-    base : this.darkBase.base,
-    surface : this.darkBase.surface
-  }
+  colors : Theme;
+  
 
 
 
-  constructor(private observer: BreakpointObserver) {
-    let classColors = localStorage.getItem('class')
-    if (classColors) this.colors = JSON.parse(classColors)
-    localStorage.setItem('class', JSON.stringify(this.colors))
+  constructor(private observer: BreakpointObserver, public colorsService : ColorsService) {
+    this.colors = colorsService.theme
    }
 
   ngAfterViewInit() {
@@ -121,13 +93,14 @@ export class AppComponent {
     this.colors.sidenav.type = type
     localStorage.setItem('class', JSON.stringify(this.colors))
   }
+  
   changeMode(mode: string){
     if (mode == 'light'){
-      this.colors.base = this.lightBase.base 
-      this.colors.surface = this.lightBase.surface
+      this.colors.base = this.colorsService.lightBase.base 
+      this.colors.surface =this.colorsService.lightBase.surface
     }else{
-      this.colors.base = this.darkBase.base 
-      this.colors.surface = this.darkBase.surface
+      this.colors.base = this.colorsService.darkBase.base 
+      this.colors.surface =this.colorsService.darkBase.surface
     }    
     localStorage.setItem('class', JSON.stringify(this.colors))
   }

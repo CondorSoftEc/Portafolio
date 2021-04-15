@@ -7,6 +7,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { DialogComponent} from '../dialog/dialog.component'
 import {MatDividerModule} from '@angular/material/divider'
+import { NgImageSliderModule } from 'ng-image-slider';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 
 
@@ -17,7 +20,9 @@ import {MatDividerModule} from '@angular/material/divider'
     CommonModule,
     MatIconModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    NgImageSliderModule,
+    MatChipsModule
   ],
   exports: [FlipCardComponent, FlipCardFrontComponent, FlipCardBackComponent]
 })

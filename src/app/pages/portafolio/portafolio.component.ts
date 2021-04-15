@@ -1,10 +1,13 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Theme } from 'src/app/models/color-scheme';
+import { Project } from 'src/app/models/project-scheme';
+import { ApiProjectsService } from 'src/app/services/api-projects.service';
+import { ColorsService } from 'src/app/services/colors.service';
 
-export interface CardData {
-  imageId: string;
-  state: 'default' | 'flipped' | 'matched';
-}
+
 
 @Component({
   selector: 'app-portafolio',
@@ -12,70 +15,20 @@ export interface CardData {
   styleUrls: ['./portafolio.component.scss'],
 })
 export class PortafolioComponent implements OnInit {
-  elements = [
-    {
-      name : 'Rayo',
-      image: '../../assets/rayo.png',
-      icon: '../../assets/rayo.png',
-      type : 'Aplicación Mòvil',
-      description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-      achievements : ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades']
-    
-    },{
-      name : 'Rayo',
-      image: '../../assets/rayo.png',
-      icon: '../../assets/rayo.png',
-      type : 'Aplicación Mòvil',
-      description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-      achievements : ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades']
-    
-    },{
-      name : 'Rayo',
-      image: '../../assets/rayo.png',
-      icon: '../../assets/rayo.png',
-      type : 'Aplicación Mòvil',
-      description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-      achievements : ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades']
-    
-    },{
-      name : 'Rayo',
-      image: '../../assets/rayo.png',
-      icon: '../../assets/rayo.png',
-      type : 'Aplicación Mòvil',
-      description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-      achievements : ["app numero 1 en yantaza kljdaskljdsklads kljasdklajsdkl lkajsdkljasdkl kjklasdjkls", 'Damos trabajao a mas de', 'disponible en 3 ciudades'],      tech : ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades']
-    },{
-      name : 'Rayo',
-      image: '../../assets/rayo.png',
-      icon: '../../assets/rayo.png',
-      type : 'Aplicación Mòvil',
-      description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-      achievements : ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades']
-    
-    },
-  ]
-
-  data: CardData = {
-    imageId: "pDGNBK9A0sk",
-    state: "default"
-  };
-
+  elementsObservable: Observable<Project[]>;
   showDialog = false;
-  constructor() { }
+  theme : Theme;
+  constructor(private api:ApiProjectsService, private colors : ColorsService) { 
+    this.theme = this.colors.theme
+    this.elementsObservable = this.api.projects
+  }
 
   ngOnInit(): void {
-   
+
   }
 
-  getUrl(url : string, asBackground : boolean = true){
-    return asBackground ? "url("+url+")" + " center center/cover no-repeat" : url
+  getUrl(url: string, asBackground: boolean = true) {
+    return asBackground ? "url(" + url + ")" + " center center/cover no-repeat" : url
   }
 
-  cardClicked() {
-    if (this.data.state === "default") {
-      this.data.state = "flipped";
-    } else {
-      this.data.state = "default";
-    }
-  }
 }
