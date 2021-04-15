@@ -1,1 +1,77 @@
-<p>tecnologia works!</p>
+
+  <div *ngIf="elementsTech" class="scrollable container-fluid"
+    style="width: 100%; height: 100%">
+    <div class="container" *ngFor="let element of elementsTech; let i = index">
+      <div class="row d-flex">
+        <div class="col-8 title">
+          <h3 class="d-inline-block m-0">{{ element.name }}</h3>
+        </div>
+        <div class="col-4 text-right">
+          <button mat-button type="button" class="menu-button mb-3 ml-auto fixed-color" matTooltip="Ver código fuente"
+            (click)="toggleCode(i)">
+            <mat-icon>code</mat-icon>
+          </button>
+          <button mat-button type="button" class="menu-button mb-3 ml-auto fixed-color" matTooltip="Verlo en Acción"
+            (click)="toggleExample(i)">
+            <mat-icon>launch</mat-icon>
+          </button>
+        </div>
+      </div>
+      <mat-divider class="divider mt-2 mb-2"></mat-divider>
+      <mat-accordion>
+        <mat-expansion-panel class="expansion-container" [expanded]="element.showCode">
+          <div>
+            <app-code-snippet [code]="element.code"></app-code-snippet>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-accordion>
+        <mat-expansion-panel class="expansion-container" [expanded]="element.showExample">
+          <div>
+            <app-examples [example]="element.example"></app-examples>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <div class="row" style="margin-top: 10px">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2 p-4">
+          <img class="image" src="{{ getUrl(element.image, false) }}" alt="Photo of CondorsoftecProject" />
+        </div>
+        <div class="col-12 col-sm-6 col-md-8 col-lg-10 col-xl-10 p-4 fixed-color description">
+          {{ element.description }}
+        </div>
+      </div>
+    </div>
+    <div *ngIf=" tools">
+      <div class="header">
+        <h1>
+          Herramientas Utilizadas
+        </h1>
+      </div>
+      <div class="row justify-content-start">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 pb-3" *ngFor="let element of tools; let i = index">
+          <mat-accordion>
+            <mat-expansion-panel class="expansion-container"
+              [ngStyle]="{background: element.panelOpen ? getUrl(element.image) : '#33363a'}"
+              (mouseenter)="tools[i].panelOpen=!tools[i].panelOpen" [expanded]="element.panelOpen">
+              <mat-expansion-panel-header [ngStyle]="{background: (element.panelOpen)  ? 'transparent' : '#33363a' }"
+                (click)="controlExpansionPanel(i)">
+                <div [class.opened]="element.panelOpen" class="title align-items-center">
+                  {{element.title}}
+                </div>
+
+              </mat-expansion-panel-header>
+              <div class="row justify-content-start">
+                <div class="col scrollableCard">
+                  <p class="descriptionCard">{{element.description}} <br>
+                    <a [href]="element.url" target="_blank" class="align-items-center">Ver más...</a>
+                  </p>
+
+                </div>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+

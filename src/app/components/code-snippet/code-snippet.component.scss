@@ -1,0 +1,37 @@
+.code-container{
+    border-radius: 5px;
+}
+
+.scrollable {
+  height: 250px;
+  overflow: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.mat-tab-label {
+    min-width: 25px !important;
+    padding: 5px;
+    background-color: transparent;
+    color: white;
+}
+
+.copy-alligned {
+    position: absolute;
+    right: 1px;
+    top: 20px;
+    color: white
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .success-dialog .mat-simple-snackbar-action  {
+    color: rgb(150, 150, 150) 
+  }
+
+  .success-dialog {
+    color: white
+  }
+  

@@ -7,7 +7,9 @@
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/utilities"; // add css utilities
+@import "~bootstrap/scss/utilities";// add css utilities
+
+@import '~highlight.js/styles/androidstudio.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -22,4 +24,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
   .transparent{
     opacity: 40%;
+  }
+
+  ::ng-deep .mat-expansion-panel-header{
+    transition: height 2s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }

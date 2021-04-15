@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,21 @@ import {MatMenuModule} from '@angular/material/menu';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { TecnologiaComponent } from './pages/tecnologia/tecnologia.component';
 import {FlipCardModule} from './components/flip-card/flip-card.module';
+import {  MatTabsModule } from '@angular/material/tabs';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTooltipModule} from   '@angular/material/tooltip';
+
+import { NgImageSliderModule } from 'ng-image-slider';
+
+
+
+// Code Snippets
+
+import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
+import { CodeSnippetComponent } from './components/code-snippet/code-snippet.component';
+import { ExamplesComponent } from './components/examples/examples.component';
+
+
 
 @NgModule({
   declarations: [
@@ -28,6 +43,8 @@ import {FlipCardModule} from './components/flip-card/flip-card.module';
     ColorPickerCardComponent,
     PortafolioComponent,
     TecnologiaComponent,
+    CodeSnippetComponent,
+    ExamplesComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +60,19 @@ import {FlipCardModule} from './components/flip-card/flip-card.module';
     MatCardModule,
     MatMenuModule,
     FlipCardModule,
+    MatTabsModule,
+    MatSnackBarModule,
+    MatTooltipModule,
+    HighlightModule,
+    NgImageSliderModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ {
+    provide: HIGHLIGHT_OPTIONS,
+    useValue: {
+      fullLibraryLoader: () => import('highlight.js')
+    }
+  }],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

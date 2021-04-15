@@ -20,6 +20,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "highlight.js"
+            ],
             "outputPath": "dist/portafolio",
             "index": "src/index.html",
             "main": "src/main.ts",
