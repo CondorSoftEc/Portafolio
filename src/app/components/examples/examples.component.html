@@ -1,0 +1,14 @@
+
+<div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 p-4 content">
+            {{example.content}}
+            <div class="content" *ngIf="example.url"> Accede al siguiente <a [href]="example.url" target="_blank">enlace</a> para ver la tecnología en acción.</div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 p-4 imageContainer">
+            <img class="image" src="{{ getUrl(example.media, false) }}" alt="Photo of CondorsoftecProject" />
+        </div>
+    </div>
+</div>
+
+

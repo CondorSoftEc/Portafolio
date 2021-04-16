@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, ReplaySubject, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Project } from '../models/project-scheme';
+import { Technology } from '../models/technology-scheme';
+import { Tools } from '../models/tools-scheme';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,10 @@ export class ApiProjectsService {
 
   temp = new Subject<Project[]>()
   projects = this.temp.asObservable();
+
+
   constructor() { 
+
     setTimeout(() => {
       this.getData()
     }, 10);
@@ -364,5 +369,7 @@ export class ApiProjectsService {
     ]
     this.temp.next(tempData)
   }
+
+
   
 }
