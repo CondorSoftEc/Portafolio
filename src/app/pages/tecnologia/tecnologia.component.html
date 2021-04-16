@@ -52,20 +52,19 @@
           <mat-accordion>
             <mat-expansion-panel class="expansion-container"
               [ngStyle]="{background: element.panelOpen ? getUrl(element.image) : '#33363a'}"
-              (mouseenter)="tools[i].panelOpen=!tools[i].panelOpen" [expanded]="element.panelOpen">
+              (mouseenter)="tools[i].panelOpen=!tools[i].panelOpen"
+              [expanded]="element.panelOpen">
               <mat-expansion-panel-header [ngStyle]="{background: (element.panelOpen)  ? 'transparent' : '#33363a' }"
                 (click)="controlExpansionPanel(i)">
                 <div [class.opened]="element.panelOpen" class="title align-items-center">
                   {{element.title}}
                 </div>
-
               </mat-expansion-panel-header>
               <div class="row justify-content-start">
                 <div class="col scrollableCard">
                   <p class="descriptionCard">{{element.description}} <br>
                     <a [href]="element.url" target="_blank" class="align-items-center">Ver más...</a>
                   </p>
-
                 </div>
               </div>
             </mat-expansion-panel>

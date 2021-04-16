@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Technology } from 'src/app/models/technology-scheme';
-import { Tools } from 'src/app/models/tools-scheme';
-import { ApiProjectsService } from 'src/app/services/api-projects.service';
+import { LocalDataService } from '../../services/local-data.service';
 
 @Component({
   selector: 'app-tecnologia',
@@ -15,9 +12,9 @@ export class TecnologiaComponent implements OnInit {
   tools;
 
 
-  constructor( private api:ApiProjectsService) {
-    this.elementsTech = this.api.tempTech
-    this.tools = this.api.tempTools
+  constructor( private localDataService: LocalDataService) {
+    this.elementsTech = this.localDataService.tempTech
+    this.tools = this.localDataService.tempTools
   }
 
   ngOnInit(): void {}
