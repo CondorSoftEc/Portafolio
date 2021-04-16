@@ -487,49 +487,122 @@ export class LocalDataService {
       },
     ];
 
-    this.tempTools  = [
-      {
+    this.tempTools  = [ { name: 'Frontend', software: [ {
         panelOpen: false,
-        image: '../../assets/rayo.png',
-        title: 'Framework 1',
-        url: 'https://menu.bom-ec.com',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. '
+        image: '../../assets/angular.png',
+        title: 'Angular',
+        url: 'https://angular.io/',
+        description: 'Framework para aplicaciones web, desarrollado en Typescript, open source, desarrollado y mantenido por Google.'
       },
       {
         panelOpen: false,
-        image: '../../assets/rayo.png',
-        title: 'Framework 2',
-        url: 'https://menu.bom-ec.com',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. '
+        image: '../../assets/ionic.png',
+        title: 'Ionic Framework',
+        url: 'https://ionicframework.com/',
+        description: 'Un framework open source  orientado al desarrollo de aplicaciones móviles y web de gran calidad, multiplataforma y con un solo código base'
       },
       {
         panelOpen: false,
-        image: '../../assets/rayo.png',
-        title: 'Framework 3',
-        url: 'https://menu.bom-ec.com',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. '
+        image: '../../assets/react.png',
+        title: 'React Native',
+        url: 'https://reactnative.dev/',
+        description: 'Uno de los frameworks más utilizados para desarrollar aplicaciones híbridas. Al ser desarrollado y mantenido por Facebook, se convierte en una excelente opción para programar'
       },
       {
         panelOpen: false,
-        image: '../../assets/rayo.png',
-        title: 'Framework 4',
-        url: 'https://menu.bom-ec.com',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. '
+        image: '../../assets/flutter.png',
+        title: 'Flutter',
+        url: 'https://flutter.dev/',
+        description: 'Flutter es un framework desarrollado por Google, con el objetivo de crear aplicaciones nativas, ya sea para dispositivos móviles, navegadores, e incluso aplicaciones de escritorio, a partir de un código base.'
       },
       {
         panelOpen: false,
-        image: '../../assets/rayo.png',
-        title: 'Framework 5',
-        url: 'https://menu.bom-ec.com',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. '
+        image: '../../assets/bootstrap.png',
+        title: 'Bootstrap',
+        url: 'https://getbootstrap.com/',
+        description: 'Una herramienta de código abierto, desarrollada por Twitter allá por el año 2010 (En un inicio su nombre fue Twitter Blueprint). El objetivo de la misma es permitir que la página realizada se pueda adaptar al tamaño del dispositivo desde el cual se la está utilizando, a través de un diseño responsive.'
       },
       {
         panelOpen: false,
-        image: '../../assets/rayo.png',
-        title: 'Framework 6',
-        url: 'https://menu.bom-ec.com',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique p'
-      },
+        image: '../../assets/wordpress.png',
+        title: 'Wordpress',
+        url: 'https://wordpress.com/es/',
+        description: 'Es un sistema de gestión de contenidos (Tradicionalmente conocido como CMS), el cual permite la creación y el mantenimiento de cualquier tipo de página web. La mayor parte de este sistema se encuentra programado con el lenguaje php. Un dato interesante es que actualmente existen más de 75 millones de sitios creados con esta herramienta.'
+      } ]
+     },
+     { name: 'Backend y Almacenamiento de Datos', software: [ {
+      panelOpen: false,
+      image: '../../assets/firebase.png',
+      title: 'Firebase',
+      url: 'https://firebase.google.com/',
+      description: 'Desarrollado por Google, Firebase se convierte en un excelente aliado para el desarrollo de aplicaciones. Entre las principales funcionalidades que ofrece, están: Bases de Datos, Analitycs, Push Notifications, multiplataforma.'
+    },
+    {
+      panelOpen: false,
+      image: '../../assets/node.jpg',
+      title: 'Node JS',
+      url: 'https://nodejs.org/es/',
+      description: 'Se trata de un framework  de código abierto, orientado a trabajar en la  capa del Servidor, y basado en el  lenguaje de programación Javascript. Creado con el objetivo de ser útil en la  creación de programas  de red altamente escalables, como por ejemplo, servidores Web.'
+    },
+    {
+      panelOpen: false,
+      image: '../../assets/couch.png',
+      title: 'CouchDB',
+      url: 'https://couchdb.apache.org/',
+      description: 'Es un gestor de bases de datos de código abierto. La misma es NoSQL, razón por la cual  emplea el modelo JSON  para almacenar los datos, así como también uas Javascript como lenguaje de consulta. Es una herramienta ideal para desarrollar offline first apps.'
+    },
+    {
+      panelOpen: false,
+      image: '../../assets/mongo.png',
+      title: 'MongoDB',
+      url: 'https://www.mongodb.com/es',
+      description: 'MongoDB es una base de datos distribuida, basada en documentos y de uso general que ha sido diseñada para desarrolladores de aplicaciones modernas y para la era de la nube. Ha sido utilizada por grandes empresas, entre ellas: Google, SEGA, ebay, Verizon, EA, etc.'
+    },
+    {
+      panelOpen: false,
+      image: '../../assets/django.jpg',
+      title: 'Django',
+      url: 'https://www.djangoproject.com/',
+      description: 'Django es un framework web diseñado para realizar aplicaciones de cualquier complejidad en periodos de tiempo más cortos. El mismo se encuentra escrito en Python y posee una comunidad inmensa que siempre se encuentra mejorando la herramienta.'
+    },
+    {
+      panelOpen: false,
+      image: '../../assets/postgresql.png',
+      title: 'PostgreSQL',
+      url: 'https://www.postgresql.org/',
+      description: 'Se trata de una de las bases de datos relacionales más utilizadas en el campo de la tecnología. LLeva ya más de 30 años de continuo desarrollo y mejoras, lo cual le ha creado una excelente fiabilidad, desempeño y rendimiento'
+    } ]
+   },
+   { name: 'Análisis de Datos y Machine Learning', software: [ {
+    panelOpen: false,
+    image: '../../assets/Firebase-Analytics.png',
+    title: 'Firebase Analytics',
+    url: 'https://firebase.google.com/products/analytics',
+    description: 'Google Analytics para firebase proporciona informes ilimitados y gratuitos de  hasta 500 eventos diferentes. Este tipo información puede ser escencial para la corrección de errores, definir futuras mejoras en la aplicación, e incluso  realizar eventos personalizados para medir factores importantes'
+  },
+  {
+    panelOpen: false,
+    image: '../../assets/tensor.png',
+    title: 'TensorFlow',
+    url: 'https://www.tensorflow.org/',
+    description: 'Es una  plataforma open source, orientado  al aprendizaje automático. Es una de los frameworks más utilizados en este campo por  la variedad de herramientas,  bibliotecas, y recursos que ofrece la misma y su comunidad.'
+  },
+  {
+    panelOpen: false,
+    image: '../../assets/keras.png',
+    title: 'Keras',
+    url: 'https://keras.io/',
+    description: 'Es un API (Application Programming Interface) desarrollada aplicando las mejores técnicas para hacerla sencilla y fácil de utilizar para tecnologías deep learning, redes convoluttivas, predicciones de series de tiempo.'
+  },
+  {
+    panelOpen: false,
+    image: '../../assets/chatbot.png',
+    title: 'ChatBots',
+    url: 'https://www.codecademy.com/learn/paths/build-chatbots-with-python',
+    description: 'La forma más sencilla para definit un chatbot es la siguiente: un asistente automatizado que se comunica con  los usuarios  a través de  mensajes de texto. En vista de que se trata de un asistente automatizado, es necesario previamente "enseñarle" todo lo que necesita saber para mantener una conversación clara con el usuario y poder ayudar.'
+  }
+]
+ }
     ];
-   }
+  }
 }

@@ -37,7 +37,7 @@ export class TecnologiaComponent implements OnInit {
       : url;
   }
 
-  controlExpansionPanel(i: number){
-    this.tools[i].panelOpen =  this.tools[i].panelOpen ?  !this.tools[i].panelOpen : true
+  controlExpansionPanel(i: number, j: number){
+    this.tools[i].software[j].panelOpen =  this.tools[i].software[j].panelOpen ?  !this.tools[i].software[j].panelOpen : true
   }
 }
