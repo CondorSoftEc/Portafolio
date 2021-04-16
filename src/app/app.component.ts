@@ -1,10 +1,10 @@
-import { animate, state, style, transition, trigger } from '@angular/animations';
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, ViewChild } from '@angular/core';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {BreakpointObserver} from '@angular/cdk/layout';
+import {ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, ViewChild} from '@angular/core';
 
-import { MatSidenav } from '@angular/material/sidenav';
-import { Theme } from './models/color-scheme';
-import { ColorsService } from './services/colors.service';
+import {MatSidenav} from '@angular/material/sidenav';
+import {Theme} from './models/color-scheme';
+import {ColorsService} from './services/colors.service';
 
 export type FadeState = 'open' | 'closed';
 
@@ -84,14 +84,12 @@ export class AppComponent {
       path: 'technology',
       icon: 'devices'
     }
-  ]
+  ];
   colors: Theme;
 
 
-
-
   constructor(private observer: BreakpointObserver, public colorsService: ColorsService) {
-    this.colors = colorsService.theme
+    this.colors = colorsService.theme;
   }
 
   ngAfterViewInit() {
@@ -109,7 +107,7 @@ export class AppComponent {
   @HostListener('document:click', ['$event'])
   clickout(event: any) {
     if (!this.input.nativeElement.contains(event.target) && this.show == true && !this.buttonSettings.nativeElement.contains(event.target)) {
-      this.show = false
+      this.show = false;
     }
   }
 
@@ -118,18 +116,18 @@ export class AppComponent {
   }
 
   changeType(type: string) {
-    this.colors.sidenav.type = type
-    localStorage.setItem('class', JSON.stringify(this.colors))
+    this.colors.sidenav.type = type;
+    localStorage.setItem('class', JSON.stringify(this.colors));
   }
 
   changeMode(mode: string) {
     if (mode == 'light') {
-      this.colors.base = this.colorsService.lightBase.base
-      this.colors.surface = this.colorsService.lightBase.surface
+      this.colors.base = this.colorsService.lightBase.base;
+      this.colors.surface = this.colorsService.lightBase.surface;
     } else {
-      this.colors.base = this.colorsService.darkBase.base
-      this.colors.surface = this.colorsService.darkBase.surface
+      this.colors.base = this.colorsService.darkBase.base;
+      this.colors.surface = this.colorsService.darkBase.surface;
     }
-    localStorage.setItem('class', JSON.stringify(this.colors))
+    localStorage.setItem('class', JSON.stringify(this.colors));
   }
 }

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Project } from 'src/app/models/project-scheme';
+import {Component, Input, OnInit} from '@angular/core';
+import {Project} from 'src/app/models/project-scheme';
 
 @Component({
   selector: 'flip-card',
@@ -9,24 +9,27 @@ import { Project } from 'src/app/models/project-scheme';
 export class FlipCardComponent implements OnInit {
 
   toggleProperty = false;
-  @Input() element : any; 
+  @Input() element: any;
   showDialog = false;
-  elementAux?:Project;
+  elementAux?: Project;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
-  toggle() {
+  ngOnInit(): void {
+    console.log(this.element);
+  }
+
+  toggle(): void {
     this.toggleProperty = !this.toggleProperty;
   }
 
-  changeDialog(element:Project){
-    this.elementAux = element
-    this.showDialog = !this.showDialog
+  changeDialog(element: Project): void {
+    this.elementAux = element;
+    this.showDialog = !this.showDialog;
   }
-  getUrl(url : string){
-    return "url("+url+")" + " center center/cover no-repeat"
+
+  getUrl(url: string): any {
+    return 'url(' + url + ')' + ' center center/cover no-repeat';
   }
 }
