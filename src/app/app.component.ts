@@ -6,27 +6,28 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { Theme } from './models/color-scheme';
 import { ColorsService } from './services/colors.service';
 
+export type FadeState = 'open' | 'closed';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    trigger('openClose', [
+    trigger('state', [
       state(
         'open',
         style({
-          opacity: '1'
+          opacity: '1',
         })
       ),
       state(
         'closed',
         style({
           opacity: '0',
-          visibility : 'hidden'
         })
       ),
       transition('open => closed', [animate('500ms ease-out')]),
-      transition('closed => open', [animate('500ms ease-out')])
+      transition('* => open', [animate('500ms ease-out')])
     ])
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -39,7 +40,34 @@ export class AppComponent {
 
   panelOpenState = false;
   isOpen = false;
-  
+
+
+  state!: FadeState;
+  // tslint:disable-next-line: variable-name
+  private _show: boolean = false;
+
+  get show() {
+    return this._show;
+  }
+
+  @Input()
+  set show(value: boolean) {
+    if (value) {
+      // show the content and set it's state to trigger fade in animation
+      this._show = value;
+      this.state = 'open';
+    } else {
+      // just trigger the fade out animation
+      this.state = 'closed';
+    }
+  }
+
+  onAnimationEvent(event: any) {
+    if ((event.fromState === 'open') && event.toState === 'closed') {
+      this._show = false;
+    }
+  }
+
   links = [
     {
       name: 'Acerca de nosotros',
@@ -57,14 +85,14 @@ export class AppComponent {
       icon: 'devices'
     }
   ]
-  colors : Theme;
-  
+  colors: Theme;
 
 
 
-  constructor(private observer: BreakpointObserver, public colorsService : ColorsService) {
+
+  constructor(private observer: BreakpointObserver, public colorsService: ColorsService) {
     this.colors = colorsService.theme
-   }
+  }
 
   ngAfterViewInit() {
     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
@@ -79,29 +107,29 @@ export class AppComponent {
   }
 
   @HostListener('document:click', ['$event'])
-  clickout(event : any) {
-    if(!this.input.nativeElement.contains(event.target) && this.isOpen == true && !this.buttonSettings.nativeElement.contains(event.target)) {
-      this.isOpen = false
-    } 
+  clickout(event: any) {
+    if (!this.input.nativeElement.contains(event.target) && this.show == true && !this.buttonSettings.nativeElement.contains(event.target)) {
+      this.show = false
+    }
   }
 
-  changeShow(){
-    this.isOpen = !this.isOpen;
+  changeShow() {
+    this.show = !this._show;
   }
 
-  changeType(type : string){
+  changeType(type: string) {
     this.colors.sidenav.type = type
     localStorage.setItem('class', JSON.stringify(this.colors))
   }
-  
-  changeMode(mode: string){
-    if (mode == 'light'){
-      this.colors.base = this.colorsService.lightBase.base 
-      this.colors.surface =this.colorsService.lightBase.surface
-    }else{
-      this.colors.base = this.colorsService.darkBase.base 
-      this.colors.surface =this.colorsService.darkBase.surface
-    }    
+
+  changeMode(mode: string) {
+    if (mode == 'light') {
+      this.colors.base = this.colorsService.lightBase.base
+      this.colors.surface = this.colorsService.lightBase.surface
+    } else {
+      this.colors.base = this.colorsService.darkBase.base
+      this.colors.surface = this.colorsService.darkBase.surface
+    }
     localStorage.setItem('class', JSON.stringify(this.colors))
   }
 }

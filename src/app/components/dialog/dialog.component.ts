@@ -39,4 +39,8 @@ export class DialogComponent  {
   getUrl(url : string, asBackground : boolean = true){
     return asBackground ? "url("+url+")" + " center center/cover no-repeat" : url
   }
+
+  navigatePage(url : string){
+    window.open(url, "_blank")
+  }
 }

@@ -1,9 +1,11 @@
 <!-- componente de selector de color -->
-<div class="floatCustom float-right">
+<div class="floatCustom float-right"  >
   <div class="row d-flex align-items-start">
     <div #colorCard>
-      <mat-card class="mat-elevation-z10 mr-2 custom" [@openClose]="isOpen ? 'open' : 'closed'"
-        [style.color]="colors.surface.color" [style.background]="colors.surface.background">
+      <mat-card *ngIf="show" class="mat-elevation-z10 mr-2 custom" 
+      [@state]="state" style="opacity: 0;"
+      (@state.done)="onAnimationEvent($event)"
+      [style.color]="colors.surface.color" [style.background]="colors.surface.background">
         <div class="grid">
           <div class="row justify-content-center mb-2">
             <div class="col d-flex justify-content-center">

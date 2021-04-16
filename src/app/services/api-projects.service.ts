@@ -12,7 +12,7 @@ export class ApiProjectsService {
   constructor() { 
     setTimeout(() => {
       this.getData()
-    }, 1000);
+    }, 10);
     
   }
 
@@ -20,12 +20,13 @@ export class ApiProjectsService {
    
     let tempData : Project[] = [
       {
+        id:"1",
         name: 'Rayo',
         image: '../../assets/rayo.png',
         icon: '../../assets/rayo.png',
         type: 'Aplicación Mòvil',
         description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-        achievements: ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades'],
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
         captures: [{
           image: '../../assets/rayo.png',
           thumbImage: '../../assets/rayo.png',
@@ -47,130 +48,319 @@ export class ApiProjectsService {
           alt: 'alt of image',
           title: 'title of image'
         }],
-        tech: ["anguar", 'pwa', 'QR'],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
+        references: [{icon: 'facebook', url: 'google.com'}]
+      }, {
+        id:"1",
+        name: 'Rayo',
+        image: '../../assets/rayo.png',
+        icon: '../../assets/rayo.png',
+        type: 'Aplicación Mòvil',
+        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
+        achievements: [{name: "app numero 1 en yantaza", description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. "}],
+        captures: [{
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }, {
+          image: '../../assets/rayo.png',
+          thumbImage: '../../assets/rayo.png',
+          alt: 'alt of image',
+          title: 'title of image'
+        }],
+        tech: [{name:"angular", url:"google.com"}],
         references: [{icon: 'facebook', url: 'google.com'}]
       },
-      {
-        name: 'Rayo',
-        image: '../../assets/rayo.png',
-        icon: '../../assets/rayo.png',
-        type: 'Aplicación Mòvil',
-        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-        achievements: ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades'],
-        captures: [{
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }],
-        tech: ["anguar", 'pwa', 'QR'],
-        references: [{icon: 'facebook', url: 'google.com'}]
-      },  {
-        name: 'Rayo',
-        image: '../../assets/rayo.png',
-        icon: '../../assets/rayo.png',
-        type: 'Aplicación Mòvil',
-        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-        achievements: ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades'],
-        captures: [{
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }],
-        tech: ["anguar", 'pwa', 'QR'],
-        references: [{icon: 'facebook', url: 'google.com'}]
-      },  {
-        name: 'Rayo',
-        image: '../../assets/rayo.png',
-        icon: '../../assets/rayo.png',
-        type: 'Aplicación Mòvil',
-        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-        achievements: ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades'],
-        captures: [{
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }],
-        tech: ["anguar", 'pwa', 'QR'],
-        references: [{icon: 'facebook', url: 'google.com'}]
-      },  {
-        name: 'Rayo',
-        image: '../../assets/rayo.png',
-        icon: '../../assets/rayo.png',
-        type: 'Aplicación Mòvil',
-        description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nu Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nuLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at velit nulla. Vivamus et odio a dolor cursus ultricies et sit amet urna. Ut tristique posuere magna pulvinar pretium. Vestibulum in sodales leo. Aliquam tempor tellus at rutrum efficitur. Pellentesque fermentum egestas facilisis. Suspendisse in faucibus eros. ',
-        achievements: ["app numero 1 en yantaza", 'Damos trabajao a mas de', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades', 'disponible en 3 ciudades'],
-        captures: [{
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }, {
-          image: '../../assets/rayo.png',
-          thumbImage: '../../assets/rayo.png',
-          alt: 'alt of image',
-          title: 'title of image'
-        }],
-        tech: ["anguar", 'pwa', 'QR'],
-        references: [{icon: 'facebook', url: 'google.com'}]
-      }
     ]
     this.temp.next(tempData)
   }
