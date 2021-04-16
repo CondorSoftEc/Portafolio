@@ -30,7 +30,6 @@ export class DialogComponent  {
     this.theme = this.color.theme
    }
 
-
   close() {
     this.visible = false;
     this.visibleChange.emit(this.visible);
