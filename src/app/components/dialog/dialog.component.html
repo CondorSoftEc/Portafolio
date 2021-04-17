@@ -49,7 +49,7 @@
     <div class="end p-3" [style.background]="theme.surface.background">
       <div class="inverseBorder2" [style.--box-shadow-color]="theme.surface.background"></div>
       <div class="row text-left">
-        <div class="col" *ngIf="element.achievements">
+        <div class="col" *ngIf="element.achievements.length>0">
           <div class="d-flex align-items-center">
             <p class="text-uppercase font-weight-bold d-flex align-items-center">Logros <mat-icon class="ml-1">
                 emoji_events</mat-icon>
