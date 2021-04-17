@@ -60,7 +60,7 @@
           </ul>
         </div>
       </div>
-      <div class="row" *ngIf="element.captures">
+      <div class="row" *ngIf="element.captures.length > 0">
         <div class="col">
           <p class="text-uppercase font-weight-bold d-flex align-items-left">Capturas de pantalla</p>
           <ng-image-slider [manageImageRatio]="true" [imageSize]="{width: '30%', height: '200px', space: 4}"
