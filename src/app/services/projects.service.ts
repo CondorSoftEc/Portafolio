@@ -22,7 +22,7 @@ export class ProjectsService {
 
   getProjects(): Observable<Project[]> {
     let temp = this.afStore.collection('projects',
-      ref => ref.orderBy('index', 'desc')).snapshotChanges().pipe(map(arr => {
+      ref => ref.orderBy('index', 'asc')).snapshotChanges().pipe(map(arr => {
         return arr.map(snap => {
           const data = snap.payload.doc.data();
           const id = snap.payload.doc.id;

@@ -10,7 +10,7 @@
           <div class="container">
             <div class="row no-gutters align-items-center">
               <div class="col-3">
-                <img class="image" src="{{getUrl(element.image, false)}}"
+                <img class="image" *ngIf="element.image" src="{{getUrl(element.image, false)}}"
                      alt="Photo of Condorsoftec Project">
               </div>
               <div class="col-9">
@@ -25,7 +25,7 @@
                   element.description}}</p>
               </div>
             </div>
-            <div class="row text-justify">
+            <div class="row text-justify" *ngIf="element.achievements && element.achievements.length > 0">
               <div class="col">
                 <p>Logros:</p>
                 <ul>
