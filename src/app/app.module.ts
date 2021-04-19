@@ -23,7 +23,7 @@ import {FlipCardModule} from './components/flip-card/flip-card.module';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {MatChipsModule} from '@angular/material/chips';
 import {NgImageSliderModule} from 'ng-image-slider';
 
 
@@ -54,6 +54,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatChipsModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,

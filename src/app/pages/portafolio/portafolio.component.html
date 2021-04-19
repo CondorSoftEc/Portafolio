@@ -1,44 +1,70 @@
-<div *ngIf="(!starting) && (elementsObservable | async) as elements; else loading" class="scrollable container-fluid"
-     style="width: 100%; height: 100%;">
-  <div class="row justify-content-start">
-    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-3" *ngFor="let element of elements">
-      <flip-card [element]="element">
-        <flip-card-front>
-          <span class="font-weight-bold name">{{element.name}}</span>
-        </flip-card-front>
-        <flip-card-back style="height: 100%; width: 100%; overflow: auto;" class="p-1 pb-5">
-          <div class="container">
-            <div class="row no-gutters align-items-center">
-              <div class="col-3">
-                <img class="image" *ngIf="element.image" src="{{getUrl(element.image, false)}}"
-                     alt="Photo of Condorsoftec Project">
-              </div>
-              <div class="col-9">
-                <h2 class="d-inline-block m-0 ">{{element.name}}</h2>
-                <h4 class="m-0 font-weight-light"> {{element.type}}</h4>
-              </div>
-            </div>
-            <mat-divider class="divider mt-2 mb-2"></mat-divider>
-            <div class="row text-justify" *ngIf="element.description">
-              <div class="col">
-                <p>{{element.description.length > 150 ? (element.description | slice:0:150) + '...' :
-                  element.description}}</p>
-              </div>
-            </div>
-            <div class="row text-justify" *ngIf="element.achievements && element.achievements.length > 0">
-              <div class="col">
-                <p>Logros:</p>
-                <ul>
-                  <li *ngFor="let logro of  element.achievements" class="text-capitalize">
-                    {{logro.name}}</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </flip-card-back>
-      </flip-card>
+<div *ngIf="(!starting) && (elementsObservable | async) as elements; else loading" class="scrollable container-fluid p-4" 
+  style="width: 100%; height: 100%;" [style.--color-var-base]="theme.base.background" 
+  [ngClass]="theme.sidenav.type" [style.--color-var-base]="theme.base.background">
+  <div class="row mb-4">
+    <div class="col">
+      <mat-chip-list aria-label="Fish selection"  [selectable]="true" multiple>
+        <mat-chip class="my-chip" (click)="chips('Todos')" 
+        [selected]="filterVariables.includes('Todos')">
+          Todos
+        </mat-chip>
+        <mat-chip *ngFor="let name of keysCategory"  class="my-chip" (click)="chips(name)"
+        [selected] = "filterVariables.includes(name)">
+        {{name}}
+      </mat-chip>
+      </mat-chip-list>
     </div>
   </div>
+
+  <ng-container *ngFor="let projectRows of filteredKeysCategory()">
+    <div class="row justify-content-start text-left">
+      <div class="col">
+        <h2 class="font-weight-bold text-uppercase" [style.color]="theme.surface.color ">{{projectRows}}</h2>
+      </div>
+    </div>
+    <div class="row  mb-5 sangria centerInMobile">
+      <div class="col-12 col-sm-6 col-lg-4 col-xl-4 p-1 mb-2 centerInMobile" *ngFor="let element of filter(elements,projectRows)">
+        <!-- <div class="col mb-2 " *ngFor="let element of filter(elements,projectRows)"> -->
+        <ng-container>
+          <flip-card [element]="element" class="cards">
+            <flip-card-front>
+              <span class="font-weight-bold name ">{{element.name}}</span>
+            </flip-card-front>
+            <flip-card-back style="height: 100%; width: 100%; overflow: auto;" class="p-1 pb-5">
+              <div class="container">
+                <div class="row no-gutters align-items-center">
+                  <div class="col-3">
+                    <img class="image" *ngIf="element.image" src="{{getUrl(element.image, false)}}"
+                      alt="Photo of Condorsoftec Project">
+                  </div>
+                  <div class="col-9">
+                    <h2 class="d-inline-block m-0 ">{{element.name}}</h2>
+                    <h4 class="m-0 font-weight-light"> {{element.type}}</h4>
+                  </div>
+                </div>
+                <mat-divider class="divider mt-2 mb-2"></mat-divider>
+                <div class="row text-justify" *ngIf="element.description">
+                  <div class="col">
+                    <p>{{element.description.length > 150 ? (element.description | slice:0:150) + '...' :
+                      element.description}}</p>
+                  </div>
+                </div>
+                <div class="row text-justify" *ngIf="element.achievements && element.achievements.length > 0">
+                  <div class="col">
+                    <p>Logros:</p>
+                    <ul>
+                      <li *ngFor="let logro of  element.achievements" class="text-capitalize">
+                        {{logro.name}}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </flip-card-back>
+          </flip-card>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
 </div>
 
 

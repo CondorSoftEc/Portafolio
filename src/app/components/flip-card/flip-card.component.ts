@@ -17,7 +17,6 @@ export class FlipCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.element);
   }
 
   toggle(): void {

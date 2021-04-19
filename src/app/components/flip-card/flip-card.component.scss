@@ -1,11 +1,20 @@
 .container2 {
     width: 100%;
-    height: 250px;
+    max-width: 320px;
+    height: 200px;
     display: block;
     position: relative;
     perspective: 800px;
     border-radius: 10px;
+    
 }
+
+@media (max-width:600px) {
+  .container2{
+    margin: auto;
+  }
+}
+
 
   .card {
     width: 100%;
@@ -36,6 +45,32 @@
     width: 100%;
   }
   
+  .frontImage{
+    z-index: -2;
+  }
+  
+  .frontImage::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(28%) blur(2px);
+    -webkit-filter: grayscale(28%) blur(2px);
+    background-image: inherit;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+
+  .frontText{
+    z-index: 9999;
+  }
+
   .flipped {
     transform: rotateY(180deg);
   }
