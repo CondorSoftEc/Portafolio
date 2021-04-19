@@ -10,12 +10,12 @@ export class ColorsService {
   darkBase = {
     base : {
       color: "white",
-      background:"black",
+      background:"#1a1a1d",
       divider:"gray"
     },
     surface : {
       color: "white",
-      background:"#1a1a1d",
+      background:"rgb(36, 46, 58)",
       divider:"gray"
     }
   }
@@ -23,7 +23,7 @@ export class ColorsService {
   lightBase = {
     base : {
       color: "black",
-      background:"white",
+      background:"#fafafa",
       divider:"gray"
     },
     surface : {

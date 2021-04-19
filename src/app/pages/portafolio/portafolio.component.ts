@@ -20,7 +20,7 @@ export class PortafolioComponent implements OnInit {
   theme: Theme;
   categories = Categories;
   starting = true;
-  timeToStart = 0
+  timeToStart = 2500
   filterVariables: string[] = ['Todos']
   keysCategory: string[]
   constructor(private colors: ColorsService,
