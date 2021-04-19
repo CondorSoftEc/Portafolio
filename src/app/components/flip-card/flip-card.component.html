@@ -10,10 +10,10 @@
         aria-label="Example icon button with a home icon">
           <mat-icon  class="iconM">arrow_back</mat-icon>
         </button> -->
-        <button mat-fab color="warn" (click)="changeDialog(element)"
+        <button mat-fab color="warn" (click)="changeDialog(element)" [ngClass]="theme.sidenav.type"
                 class=" arrow-icon d-flex align-items-center justify-content-center p-1"
                 aria-label="Example icon button with a home icon">
-          <mat-icon class="iconM">add</mat-icon>
+          <mat-icon class="iconM"  >add</mat-icon>
         </button>
       </div>
     </div>

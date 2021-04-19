@@ -38,24 +38,28 @@
       --color-var: linear-gradient(180deg, rgba(0,121,107,1) 74%, rgba(0,69,121,1) 100%);
     }
 
+    .scrollable{
+      height: 100%;
+      overflow-y: auto; 
+      overflow-x: none;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      
+  }
 }
 
 
 
 .name{
     font-size: 30px;
-    line-height: 30px;
+    line-height: 35px;
     color: white;
     text-shadow: -2px -1px 11px #000000;
+    overflow-y: auto; 
+    overflow-x: none;
 }
 
-.scrollable{
-    height: 100%;
-    overflow: auto;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    
-}
+
 
 
 /** code by webdevtrick ( https://webdevtrick.com ) **/

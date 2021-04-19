@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { Theme } from 'src/app/models/color-scheme';
 import {Project} from 'src/app/models/project-scheme';
+import { ColorsService } from 'src/app/services/colors.service';
 
 @Component({
   selector: 'flip-card',
@@ -12,8 +14,9 @@ export class FlipCardComponent implements OnInit {
   @Input() element: any;
   showDialog = false;
   elementAux?: Project;
-
-  constructor() {
+  theme: Theme;
+  constructor(public colors : ColorsService) {
+    this.theme = colors.theme
   }
 
   ngOnInit(): void {

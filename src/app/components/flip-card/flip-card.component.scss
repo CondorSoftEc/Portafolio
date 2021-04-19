@@ -68,7 +68,7 @@
   }
 
   .frontText{
-    z-index: 9999;
+    z-index: 0;
   }
 
   .flipped {
@@ -110,3 +110,27 @@
   .contentBack{
     overflow: auto;
   }
+
+  .firstSidenav{
+    background: rgb(255,143,0);
+    background: linear-gradient(180deg, rgba(255,143,0,1) 74%, rgba(240,66,18,1) 100%);
+    color: black;
+   }
+
+   .secondSidenav{
+    background: rgb(236,64,122);
+    background-color: linear-gradient(180deg, rgba(236,64,122,1) 74%, rgba(236,64,73,1) 100%);
+    color: black;
+   }
+
+   .thirdSidenav{
+    background: rgb(106,27,154);
+    background: linear-gradient(180deg, rgba(106,27,154,1) 74%, rgba(154,27,123,1) 100%);
+    color: white;
+   }
+
+   .fourthSidenav{
+    background: rgb(0,121,107);
+    background: linear-gradient(180deg, rgba(0,121,107,1) 74%, rgba(0,69,121,1) 100%);
+    color: white;
+   }

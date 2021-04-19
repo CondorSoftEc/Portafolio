@@ -42,8 +42,8 @@ export class ColorsService {
       base : this.darkBase.base,
       surface : this.darkBase.surface
     }
-    localStorage.clear()
     let classColors = localStorage.getItem('class')
+    if (classColors)
     if (classColors) this.theme = JSON.parse(classColors)
     localStorage.setItem('class', JSON.stringify(this.theme))
 
