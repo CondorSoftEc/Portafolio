@@ -1,38 +1,72 @@
-.scrollable {
-  height: 100%;
-  overflow: auto;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+:host {
+  --color-var: black;
+  --color-var-base: white;
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    ::-webkit-scrollbar {
+      width: 10px; 
+    }
+    ::-webkit-scrollbar-thumb {   
+      background: rgb(255,143,0);
+      background: var(--color-var);
+    color: black;
+     border-radius: 30px;
+     box-shadow: inset 2px 2px 2px rgba(255,255,255,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+    }
+  
+    ::-webkit-scrollbar-track {     
+     background: var(--color-var-base);
+     border-radius: 30px;
+    }   
+    
+    .firstSidenav{
+      --color-var: linear-gradient(180deg, rgba(255,143,0,1) 74%, rgba(240,66,18,1) 100%);
+    
+     }
+    
+     .secondSidenav{
+      --color-var: linear-gradient(180deg, rgba(236,64,122,1) 74%, rgba(236,64,73,1) 100%);
+    
+     }
+    
+     .thirdSidenav{
+      --color-var: linear-gradient(180deg, rgba(106,27,154,1) 74%, rgba(154,27,123,1) 100%);
+     }
+    
+     .fourthSidenav{
+      --color-var: linear-gradient(180deg, rgba(0,121,107,1) 74%, rgba(0,69,121,1) 100%);
+    }
+
+    .scrollable{
+      overflow-y: auto; 
+      overflow-x: none;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      
+  }
 }
+
+
 
 .scrollableCard {
   height: 200px;
-  overflow: auto;
+  overflow-y: auto; 
+  overflow-x: none;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
-::-webkit-scrollbar {
+.scrollableCard::-webkit-scrollbar {
   display: none;
 }
 
-:host {
-  width: 100%;
-  height: 100%;
-}
 
 .container {
   margin-top: 15px;
-  background-color: #33363a;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
-.header {
-  margin-top: 15px;
-  font-size: 27px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
+
 
 .left-alligned {
   position: absolute;
@@ -48,13 +82,20 @@
 }
 .title {
   text-align: start;
-  color: #838485;
   margin-top: 10px;
 }
 
+.title2 {
+  text-align: start;
+  margin-top: 10px;
+  display: contents;
+}
+
 .image{
-  width: 150px;
-  height: 150px;
+  height: auto;
+  width: auto;
+  max-height: 150px;
+  max-width: 100%;
   border-radius: 10px;
   object-fit: cover;
   margin-bottom: 15px;
@@ -72,27 +113,25 @@
   border-top: none;
   border-bottom: none;
   border: none;
-  background-color: #33363a;
 }
-
 
 .fixed-color{
   color: white
 }
 
 .description{
-  text-align: start;
+  text-align: justify;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px
 }
 
 .descriptionCard{
   border-radius: 5px;
-  text-align: start;
+  text-align: justify;
   padding: 5px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  margin-top:125px;
+  margin-top:50px;
   color: black;
   background: rgba(172, 172, 172, 0.623);
 }
@@ -110,4 +149,39 @@
   top: 0px;
   left: 0px;
   
+}
+.customTabName{
+  font-size: 15px;
+  margin-right: 30px;
+}
+
+.tab-wrapper{ 
+  height: 100%;
+  width: 100%;
+}
+
+  .sangria{
+    margin-left: 0px;
+    margin-right: 5px;
+  }
+
+@media (min-width:1600px) {
+  .sangria{
+    margin-left: 60px;
+    margin-right: 80px;
+  }
+}
+
+@media (min-width:1280px) {
+  .sangria{
+    margin-left: 50px;
+    margin-right: 70px;
+  }
+}
+
+@media (min-width:700px) {
+  .sangria{
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 }

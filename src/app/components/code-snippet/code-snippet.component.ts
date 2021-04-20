@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Theme } from 'src/app/models/color-scheme';
+import { ColorsService } from 'src/app/services/colors.service';
 
 @Component({
   selector: 'app-code-snippet',
@@ -9,8 +11,10 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class CodeSnippetComponent implements OnInit {
   @Input() code : any;
-  
-  constructor( private snackBar: MatSnackBar) { }
+  theme : Theme;
+  constructor( private snackBar: MatSnackBar, private color : ColorsService) {
+    this.theme = this.color.theme
+   }
 
   ngOnInit(): void {
   }

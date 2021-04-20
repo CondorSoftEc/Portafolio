@@ -1,6 +1,10 @@
 
-<mat-tab-group>
-    <mat-tab *ngFor="let item of code" label="{{item.filename}}"> 
+<mat-tab-group [style.background]="theme.surface.background" [style.color]="theme.base.color" 
+[style.--background-color]="theme.surface.background" [style.--text-color]="theme.base.color" class="code">
+    <mat-tab *ngFor="let item of code" [style.background]="theme.surface.background"  [style.color]="theme.base.color"> 
+        <ng-template mat-tab-label>
+            <span class="customTabName" [style.color]="theme.base.color">{{item.filename}}</span>
+          </ng-template>
         <div class="header">
                 <pre style="text-align: start; margin: 0">
                     <code  class="code-container scrollable" [highlight]="item.content" >

@@ -1,3 +1,77 @@
+.code{
+  --background-color : red;
+  --text-color : white;
+  .hljs-comment,
+  .hljs-quote {
+    color: #8e908c;
+  }
+  
+  /* Tomorrow Red */
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-tag,
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class,
+  .hljs-regexp,
+  .hljs-deletion {
+    color: #c82829;
+  }
+  
+  /* Tomorrow Orange */
+  .hljs-number,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-literal,
+  .hljs-type,
+  .hljs-params,
+  .hljs-meta,
+  .hljs-link {
+    color: #f5871f;
+  }
+  
+  /* Tomorrow Yellow */
+  .hljs-attribute {
+    color: #eab700;
+  }
+  
+  /* Tomorrow Green */
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-addition {
+    color: #718c00;
+  }
+  
+  /* Tomorrow Blue */
+  .hljs-title,
+  .hljs-section {
+    color: #4271ae;
+  }
+  
+  /* Tomorrow Purple */
+  .hljs-keyword,
+  .hljs-selector-tag {
+    color: #8959a8;
+  }
+  
+  .hljs {
+    display: block;
+    overflow-x: auto;
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 0.5em;
+  }
+  
+  .hljs-emphasis {
+    font-style: italic;
+  }
+  
+  .hljs-strong {
+    font-weight: bold;
+  }
+  
+}
 .code-container{
     border-radius: 5px;
 }
@@ -13,14 +87,12 @@
     min-width: 25px !important;
     padding: 5px;
     background-color: transparent;
-    color: white;
 }
 
 .copy-alligned {
     position: absolute;
     right: 1px;
     top: 20px;
-    color: white
   }
 
   .header {
@@ -31,7 +103,3 @@
     color: rgb(150, 150, 150) 
   }
 
-  .success-dialog {
-    color: white
-  }
-  
