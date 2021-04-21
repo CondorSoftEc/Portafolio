@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Matertial chidorin
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -38,6 +38,7 @@ import {AngularFireAnalyticsModule, ScreenTrackingService} from '@angular/fire/a
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 
+import {NgParticlesModule} from "ng-particles";
 
 @NgModule({
   declarations: [
@@ -69,9 +70,10 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     MatTooltipModule,
     HighlightModule,
     NgImageSliderModule,
+    NgParticlesModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAnalyticsModule,
+    AngularFireAnalyticsModule
   ],
   providers: [{
     provide: HIGHLIGHT_OPTIONS,

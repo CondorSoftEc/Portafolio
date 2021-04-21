@@ -1,0 +1,206 @@
+:host {
+    --color-var: black;
+    --color-var-base: white;
+      width: 100%;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      ::-webkit-scrollbar {
+        width: 10px; 
+      }
+      ::-webkit-scrollbar-thumb {   
+        background: rgb(255,143,0);
+        background: var(--color-var);
+      color: black;
+       border-radius: 30px;
+       box-shadow: inset 2px 2px 2px rgba(255,255,255,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+      }
+    
+      ::-webkit-scrollbar-track {     
+       background: var(--color-var-base);
+       border-radius: 30px;
+      }   
+
+      .scrollable{
+        height: 100%;
+        overflow-y: auto; 
+        overflow-x: none;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        
+    }
+  }
+
+
+.borderCard{
+  border-radius: 5px;
+  border: 3px solid black
+}
+
+.overParticles{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#particles{
+  width: 100vw;
+  height: 50vh;
+}
+
+#particles2{
+  width: 100vw;
+  height: 50vh;
+}
+
+
+  
+.header{
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.subHeader{
+  max-width: 600px !important;
+  font-size: 15px;
+  margin: auto;
+}
+
+.subHeaderProcess{
+  width:80% !important;
+  font-size: 18px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.secondTitle{
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+///////// Whatsapp Button
+
+.first {
+  position: relative;
+  text-align: center;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+///// Container
+.container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px !important;
+}
+
+.container .card {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0,0,0, 0.2);
+  overflow: hidden;
+  margin: 20px;
+  text-align: center;
+  transition: all 0.5s;
+
+}
+
+.container .card:hover{
+  transform:  translateY(-25px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.527);
+}
+.container .card:active{
+  transform:  translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.527);
+}
+
+.container .card img {
+  width: 300px;
+  height: 220px;
+}
+
+.inverseBorder{
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  right: 0px;
+  height: 100px;
+  width: 25px;
+  border-top-right-radius: 25px;
+  --box-shadow-color: transparent;
+  box-shadow: 0 -25px 0 0 var(--box-shadow-color);
+}
+
+.image{
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  border: 3px solid black;
+  transition: all 0.5s;
+}
+
+.image:hover {
+  filter: blur(4px);
+}
+
+.content{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media (max-width:420px) {
+  #particles{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #particles2{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .container .card {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0,0,0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 1s;
+  }
+
+  .container .card img {
+    width: 200px;
+    height: 130px;
+  
+  }
+  
+}
+

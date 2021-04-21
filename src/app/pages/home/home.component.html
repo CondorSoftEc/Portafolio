@@ -1,1 +1,105 @@
-<p>home works!</p>
+<div class="scrollable container-fluid borderCard " (scroll)="onScroll()" style="width: 100%; height: 100%;"
+  [style.--color-var-base]="theme.base.background" [ngClass]="theme.sidenav.type"
+  [style.--color-var-base]="theme.base.background">
+
+  <a href="https://wa.link/j338ws" class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+  </a>
+  <div class="row p-0 first" [@fadeInOnEnter]>
+    <ng-particles  id="particles" *ngIf="showParticles" [options]="particlesOptions"></ng-particles>
+    <div *ngIf="!showParticles" id="particles2">
+    </div>
+    <div  class="col overParticles">
+      <h1 class="header">
+        Somos CondorSoftEc
+      </h1>
+      <div class="subHeader">
+        <em>
+          Una empresa apasionada por el desarrollo y la tecnología. Nuestra filosofía se encuentra basada en los
+          principios de calidad, seguridad, escalabilidad, desempeño y experiencia, impulsando un modelo empresarial que
+          tiene como objetivo manejar de una manera ordenada y responsable todos los desafíos y/o deberes derivados del
+          desarrollo.
+
+        </em>
+      </div>
+    </div>
+
+    <div class="inverseBorder" [style.--box-shadow-color]="theme.base.background">
+    </div>
+  </div>
+
+  <div class="col secondTitle" [@fadeInUpOnEnter]> 
+   4 Ejes Principales
+  </div>
+  <div class="row" >
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-1 mb-2 centerInMobile container"
+    *ngFor="let element of elements; let i = index">
+  <ng-container>
+      <div class="card" [style.color]="theme.base.color" [ngStyle]="{background:  theme.base.background }" >
+        <img [src]="element.image">
+        <h4 style="margin-top: 25px; font-weight: bold;">
+          {{element.name}}
+        </h4>
+      </div>
+    </ng-container>
+  </div>
+  </div>
+
+
+  <div class="secondTitle">
+    ¿Qué es diferente cuando trabajas con nosotros?
+   </div>
+
+  <div class="row">
+    <div #diffImage class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5  offset-sm-1  offset-md-1  offset-lg-1 offset-xl-1 p-4" [@fadeInLeft]="showDiffImage">
+      <img src="../../../assets/diffImage.jpeg" class="image"> </div>
+    <div #diffContent class=" col-12 col-sm-5  col-md-5 col-lg-5 col-xl-5  text-left content p-4" [@fadeInRight]="showDiffContent">
+       <h1>
+        Cumplimos con todos los requerimientos de nuestros clientes, basándonos en 3 factores:
+       </h1>
+       <em>
+         <ul style="font-size: 18px;">
+           <li style="padding-bottom:1em">
+             La calidad del servicio ofrecido tiene que ser siempre de primera.
+           </li>
+           <li style="padding-bottom:1em">
+            El tiempo no es un impedimento, tenemos al mejor equipo de desarrolladores y diseñadores.
+           </li>
+           <li style="padding-bottom:1em">
+            Los precios son los mejores del mercado, debido a nuestro  modelo de negocios híbrido.
+           </li>
+         </ul>
+       </em>
+    </div>
+  </div>
+
+  <div #process class="row">
+    <div class="col-12 secondTitle">
+      Nuestros Procesos
+     </div>
+     <div class="col-12 ">
+       <div class="subHeaderProcess">
+        Queremos que nos consideres como tu incubadora personal de creatividad. Lo que nosotros hacemos es tomar  tus ideas y convertirlas en productos que  produzcan resultados generadores de ingresos.
+       </div>
+     </div>
+  </div>
+
+
+  <div class="row" [@zoomIn]="showProcess">
+    <div #diffContent2 class=" col-12 col-sm-5  col-md-5 col-lg-5 col-xl-5  offset-sm-1  offset-md-1  offset-lg-1 offset-xl-1 text-left content p-4">
+       <em>
+        Nos adaptamos para seguir adelante y ofrecer al cliente la mejor experiencia al trabajar con nosotros. Esto lo conseguimos a través de la implementación de las mejores 
+        y más novedosas técnicas de desarrollo, como por ejemplo CI/CD, ofreciendo un despliegue e integración continua al cliente para perfeccionar cada vez más los sistemas.
+        CondorSoftEc esta 100% preparado para asesorarte desde el principio en cuatro puntos claves:  Iniciación del Proyecto, Diseño,  Desarrollo  y Soporte.
+       </em>
+      </div>
+    <div #diffImage2  class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 content" >
+      <div>
+        <ng-image-slider #nav [images]="imageData" [infinite]="true" [manageImageRatio]=true [autoSlide]="true" [imagePopup]="false"
+          [animationSpeed]="0.1" [animationSpeed]="0.5" [imageSize]="{width: '100%', height: '300px', space:0}"></ng-image-slider>
+      </div>
+    </div>
+  </div>
+
+
+

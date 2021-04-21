@@ -16,6 +16,7 @@ export class ColorsService {
     surface : {
       color: "white",
       background:"rgb(36, 46, 58)",
+      backgroundFull: "#ffffff",
       divider:"gray"
     }
   }
@@ -29,6 +30,7 @@ export class ColorsService {
     surface : {
       color: "black",
       background:"#eae3db",
+      backgroundFull: "#000000",
       divider:"gray"
     }
   }

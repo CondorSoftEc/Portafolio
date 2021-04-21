@@ -6,6 +6,7 @@ import {MatSidenav} from '@angular/material/sidenav';
 import { Router , RouterEvent, NavigationEnd } from '@angular/router';
 import {Theme} from './models/color-scheme';
 import {ColorsService} from './services/colors.service';
+import { ParticlesService } from './services/particles.service';
 
 export type FadeState = 'open' | 'closed';
 
@@ -89,7 +90,10 @@ export class AppComponent implements OnInit{
   colors: Theme;
 
 
-  constructor(private observer: BreakpointObserver, public colorsService: ColorsService, private router: Router) {
+  constructor(private observer: BreakpointObserver, 
+    public colorsService: ColorsService, 
+    private router: Router,
+    public particlesService: ParticlesService) {
     this.colors = colorsService.theme;
   }
 
@@ -136,6 +140,7 @@ export class AppComponent implements OnInit{
       this.colors.base = this.colorsService.darkBase.base;
       this.colors.surface = this.colorsService.darkBase.surface;
     }
+    this.particlesService.generateParticles()
     localStorage.setItem('class', JSON.stringify(this.colors));
   }
 }
