@@ -22,13 +22,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     flex: 1 1 auto;
   }
 
-  .transparent{
-    opacity: 40%;
-  }
 
-  ::ng-deep .mat-expansion-panel-header{
-    transition: height 2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  }
+::ng-deep .mat-expansion-panel-header{
+  transition: height 2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
 
 
 .mat-expansion-indicator::after{

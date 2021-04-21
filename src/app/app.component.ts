@@ -143,4 +143,14 @@ export class AppComponent implements OnInit{
     this.particlesService.generateParticles()
     localStorage.setItem('class', JSON.stringify(this.colors));
   }
+
+  openUrl(page: string){
+    if (page == 'facebook'){
+      window.open('https://www.facebook.com/condorsoft.ec','_blank')
+    } else if (page == 'linkedin'){
+      window.open('https://www.linkedin.com/company/68829683','_blank')
+    } else {
+      window.open('https://www.condor-soft.com', '_blank')
+    }
+  }
 }

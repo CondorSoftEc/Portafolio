@@ -186,8 +186,8 @@
   }
 
   .container .card {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 220px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0,0,0, 0.2);
     overflow: hidden;
@@ -197,10 +197,39 @@
   }
 
   .container .card img {
-    width: 200px;
-    height: 130px;
+    width: 250px;
+    height: 150px;
   
   }
   
 }
 
+
+.carrousel{
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width:1200px) {
+  .carrousel{
+    width: 300px;
+  }  
+}
+
+@media (max-width:700px) {
+  .mobileView{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width:350px) {
+  .carrousel{
+    width: 240px;
+  }
+  .mobileView{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

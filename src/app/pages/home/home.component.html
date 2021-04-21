@@ -32,7 +32,7 @@
    4 Ejes Principales
   </div>
   <div class="row" >
-    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-1 mb-2 centerInMobile container"
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 p-0 mb-2 centerInMobile container"
     *ngFor="let element of elements; let i = index">
   <ng-container>
       <div class="card" [style.color]="theme.base.color" [ngStyle]="{background:  theme.base.background }" >
@@ -51,9 +51,9 @@
    </div>
 
   <div class="row">
-    <div #diffImage class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5  offset-sm-1  offset-md-1  offset-lg-1 offset-xl-1 p-4" [@fadeInLeft]="showDiffImage">
+    <div #diffImage class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  offset-lg-1 offset-xl-1 p-4" [@fadeInLeft]="showDiffImage">
       <img src="../../../assets/diffImage.jpeg" class="image"> </div>
-    <div #diffContent class=" col-12 col-sm-5  col-md-5 col-lg-5 col-xl-5  text-left content p-4" [@fadeInRight]="showDiffContent">
+    <div #diffContent class=" col-12 col-sm-12  col-md-12 col-lg-5 col-xl-5  text-left content p-4" [@fadeInRight]="showDiffContent">
        <h1>
         Cumplimos con todos los requerimientos de nuestros clientes, basándonos en 3 factores:
        </h1>
@@ -85,17 +85,17 @@
   </div>
 
 
-  <div class="row" [@zoomIn]="showProcess">
-    <div #diffContent2 class=" col-12 col-sm-5  col-md-5 col-lg-5 col-xl-5  offset-sm-1  offset-md-1  offset-lg-1 offset-xl-1 text-left content p-4">
+  <div class="row mobileView">
+    <div #diffContent2 class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  offset-lg-1 offset-xl-1 p-4 text-left content" [@zoomIn]="showProcess">
        <em>
         Nos adaptamos para seguir adelante y ofrecer al cliente la mejor experiencia al trabajar con nosotros. Esto lo conseguimos a través de la implementación de las mejores 
         y más novedosas técnicas de desarrollo, como por ejemplo CI/CD, ofreciendo un despliegue e integración continua al cliente para perfeccionar cada vez más los sistemas.
         CondorSoftEc esta 100% preparado para asesorarte desde el principio en cuatro puntos claves:  Iniciación del Proyecto, Diseño,  Desarrollo  y Soporte.
        </em>
       </div>
-    <div #diffImage2  class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 content" >
-      <div>
-        <ng-image-slider #nav [images]="imageData" [infinite]="true" [manageImageRatio]=true [autoSlide]="true" [imagePopup]="false"
+    <div #diffImage2  class="col-12 col-sm-12  col-md-12 col-lg-5 col-xl-5  content text-center" >
+      <div  #container class="carrousel">
+        <ng-image-slider #nav [images]="imageData" [infinite]="true" [manageImageRatio]=true  [imagePopup]="false"
           [animationSpeed]="0.1" [animationSpeed]="0.5" [imageSize]="{width: '100%', height: '300px', space:0}"></ng-image-slider>
       </div>
     </div>
