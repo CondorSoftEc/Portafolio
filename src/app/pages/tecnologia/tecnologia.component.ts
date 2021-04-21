@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Theme } from 'src/app/models/color-scheme';
 import { ColorsService } from 'src/app/services/colors.service';
 import { LocalDataService } from '../../services/local-data.service';
@@ -9,20 +9,27 @@ import { LocalDataService } from '../../services/local-data.service';
   styleUrls: ['./tecnologia.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class TecnologiaComponent implements OnInit {
-  elementsTech;
-  tools;
+export class TecnologiaComponent  implements OnInit{
+  elementsTech!:any;
+  tools!:any;
   theme : Theme;
 
-  constructor( private localDataService: LocalDataService, public colors : ColorsService) {
-    this.elementsTech = this.localDataService.tempTech
-    this.tools = this.localDataService.tempTools
+  constructor( private localDataService: LocalDataService, public colors : ColorsService, private cd : ChangeDetectorRef) {
+    
+    
     this.theme = colors.theme
   }
 
-  ngOnInit(): void {}
+  ngOnInit(){
+    setTimeout(() => {
+      this.elementsTech = this.localDataService.tempTech
+      this.tools = this.localDataService.tempTools
+      this.cd.detectChanges()
+    }, 1000);
+  }
 
   toggleCode(i: number) {
+    console.log('se manda toogle')
     this.elementsTech[i]['showExample']=false
     this.elementsTech[i]['showCode'] = this.elementsTech[i]['showCode']
       ? !this.elementsTech[i]['showCode']
@@ -30,6 +37,7 @@ export class TecnologiaComponent implements OnInit {
   }
 
   toggleExample(i: number) {
+    console.log('se manda toogle 2')
     this.elementsTech[i]['showCode']=false
     this.elementsTech[i]['showExample'] = this.elementsTech[i]['showExample']
       ? !this.elementsTech[i]['showExample']
@@ -43,6 +51,7 @@ export class TecnologiaComponent implements OnInit {
   }
 
   controlExpansionPanel(i: number, j: number){
+    console.log('se manda el panel')
     this.tools[i].software[j].panelOpen =  this.tools[i].software[j].panelOpen ?  !this.tools[i].software[j].panelOpen : true
   }
 }

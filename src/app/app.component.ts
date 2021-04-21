@@ -1,8 +1,9 @@
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {BreakpointObserver} from '@angular/cdk/layout';
-import {ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
 
 import {MatSidenav} from '@angular/material/sidenav';
+import { Router , RouterEvent, NavigationEnd } from '@angular/router';
 import {Theme} from './models/color-scheme';
 import {ColorsService} from './services/colors.service';
 
@@ -33,14 +34,14 @@ export type FadeState = 'open' | 'closed';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
   @ViewChild('colorCard') input!: ElementRef<HTMLInputElement>;
   @ViewChild('buttonSettings') buttonSettings!: ElementRef<HTMLInputElement>;
 
   panelOpenState = false;
   isOpen = false;
-
+  path='';
 
   state!: FadeState;
   // tslint:disable-next-line: variable-name
@@ -88,10 +89,17 @@ export class AppComponent {
   colors: Theme;
 
 
-  constructor(private observer: BreakpointObserver, public colorsService: ColorsService) {
+  constructor(private observer: BreakpointObserver, public colorsService: ColorsService, private router: Router) {
     this.colors = colorsService.theme;
   }
 
+  ngOnInit(){
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        this.path = event.url
+      }
+    });
+  }
   ngAfterViewInit() {
     this.observer.observe(['(max-width: 960px)']).subscribe((res) => {
       if (res.matches) {

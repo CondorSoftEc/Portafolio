@@ -96,10 +96,20 @@
     <h4 class="name">Equipo Condorsoft</h4>
     <p class="designation">Desarrollo de software</p>
     <mat-divider class="m-3" [style.background]="colors.sidenav.color"></mat-divider>
-    <button mat-button class="menu-button mb-3" *ngFor="let link of links" [routerLink]="link.path">
-      <mat-icon>{{link.icon}}</mat-icon>
-      <span>{{ link.name }}</span>
-    </button>
+    <ng-container *ngIf="sidenav && sidenav.mode === 'over'">
+      <button mat-button class="menu-button mb-3" *ngFor="let link of links" [routerLink]="link.path" (click)="sidenav.toggle()"
+      [class.selectedButton] = "'/'+link.path === path">
+        <mat-icon>{{link.icon}}</mat-icon>
+        <span>{{ link.name }}</span>
+      </button>
+    </ng-container>
+    <ng-container *ngIf="sidenav && sidenav.mode !== 'over'">
+      <button mat-button class="menu-button mb-3" *ngFor="let link of links" [routerLink]="link.path" 
+      [class.selectedButton] = "'/'+link.path === path">
+        <mat-icon>{{link.icon}}</mat-icon>
+        <span>{{ link.name }}</span>
+      </button>
+    </ng-container>
   </mat-sidenav>
   <mat-sidenav-content>
     <div [style.color]="colors.surface.color" [style.background]="colors.surface.background"
