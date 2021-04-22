@@ -20,7 +20,7 @@ export class PortafolioComponent implements OnInit {
   theme: Theme;
   categories = Categories;
   starting = true;
-  timeToStart = 2500
+  timeToStart = 1000
   filterVariables: string[] = ['Todos']
   keysCategory: string[]
   constructor(private colors: ColorsService,
@@ -77,4 +77,5 @@ export class PortafolioComponent implements OnInit {
     if (this.filterVariables.includes('Todos')) return this.keysCategory
     else return this.keysCategory.filter((res) => this.filterVariables.includes(res))
   }
+  
 }

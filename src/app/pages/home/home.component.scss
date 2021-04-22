@@ -233,3 +233,13 @@
     margin-right: auto;
   }
 }
+
+
+.curvedarrow {
+  position: fixed;
+  top:100px;
+  right: 50px;
+  width: 200px;
+  z-index: 99999;
+  filter: invert(38%) sepia(50%) saturate(1817%) hue-rotate(194deg) brightness(93%) contrast(88%);
+}

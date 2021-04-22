@@ -14,12 +14,11 @@
         Somos CondorSoftEc
       </h1>
       <div class="subHeader">
-        <em>
+        <em style="font-size: 16px;">
           Una empresa apasionada por el desarrollo y la tecnología. Nuestra filosofía se encuentra basada en los
           principios de calidad, seguridad, escalabilidad, desempeño y experiencia, impulsando un modelo empresarial que
           tiene como objetivo manejar de una manera ordenada y responsable todos los desafíos y/o deberes derivados del
           desarrollo.
-
         </em>
       </div>
     </div>
@@ -46,34 +45,33 @@
   </div>
 
 
-  <div class="secondTitle">
+  <div class="secondTitle pt-5">
     ¿Qué es diferente cuando trabajas con nosotros?
    </div>
 
   <div class="row">
     <div #diffImage class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  offset-lg-1 offset-xl-1 p-4" [@fadeInLeft]="showDiffImage">
       <img src="../../../assets/diffImage.jpeg" class="image"> </div>
-    <div #diffContent class=" col-12 col-sm-12  col-md-12 col-lg-5 col-xl-5  text-left content p-4" [@fadeInRight]="showDiffContent">
-       <h1>
+    <div #diffContent class=" col-12 col-sm-12  col-md-12 col-lg-5 col-xl-5  text-justify content p-4" [@fadeInRight]="showDiffContent">
+       <h3 style="font-size: 18px;">
         Cumplimos con todos los requerimientos de nuestros clientes, basándonos en 3 factores:
-       </h1>
-       <em>
-         <ul style="font-size: 18px;">
-           <li style="padding-bottom:1em">
+       </h3>
+         <ul style="font-size: 16px;">
+           <li style="padding-bottom:1em" class="font-weight-normal">
              La calidad del servicio ofrecido tiene que ser siempre de primera.
            </li>
-           <li style="padding-bottom:1em">
+           <li style="padding-bottom:1em" class="font-weight-normal">
             El tiempo no es un impedimento, tenemos al mejor equipo de desarrolladores y diseñadores.
            </li>
-           <li style="padding-bottom:1em">
+           <li style="padding-bottom:1em" class="font-weight-normal">
             Los precios son los mejores del mercado, debido a nuestro  modelo de negocios híbrido.
            </li>
          </ul>
-       </em>
+
     </div>
   </div>
 
-  <div #process class="row">
+  <div #process class="row pt-5">
     <div class="col-12 secondTitle">
       Nuestros Procesos
      </div>
@@ -86,12 +84,12 @@
 
 
   <div class="row mobileView">
-    <div #diffContent2 class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  offset-lg-1 offset-xl-1 p-4 text-left content" [@zoomIn]="showProcess">
-       <em>
+    <div #diffContent2 class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5  offset-lg-1 offset-xl-1 p-4 text-justify content" [@zoomIn]="showProcess">
+       <p style="font-size: 16px;">
         Nos adaptamos para seguir adelante y ofrecer al cliente la mejor experiencia al trabajar con nosotros. Esto lo conseguimos a través de la implementación de las mejores 
         y más novedosas técnicas de desarrollo, como por ejemplo CI/CD, ofreciendo un despliegue e integración continua al cliente para perfeccionar cada vez más los sistemas.
         CondorSoftEc esta 100% preparado para asesorarte desde el principio en cuatro puntos claves:  Iniciación del Proyecto, Diseño,  Desarrollo  y Soporte.
-       </em>
+       </p>
       </div>
     <div #diffImage2  class="col-12 col-sm-12  col-md-12 col-lg-5 col-xl-5  content text-center" >
       <div  #container class="carrousel">
@@ -100,6 +98,37 @@
       </div>
     </div>
   </div>
+
+  <div #process class="row pt-5">
+    <div class="col-12 secondTitle">
+      Nuestro Portafolio
+     </div>
+     <div class="col-12 ">
+       <div class="subHeaderProcess text-justify" style=" font-size: 18px;">
+        <p>
+          Nos gustaría empezar explicando con que te encontrarás en nuestro portafolio, siéntete libre de cambiarle los colores como más te gusten y faciliten su lectura justo 
+          <a class="font-weight-bold " (click)="arrowEffect()" style="text-decoration: underline;">aquí</a>, o visualiza nuestra web, desde el dispositivo que más cómodo te haga sentir (celular, tablet o pc), nuestras web es complementamente responsive como todos nuestros productos. 
+        </p>
+
+        <p>
+          En la sección de portafolio encontrarás todos los trabajos en los que hemos participado, podrás observar cómo en estos proyectos 
+          hemos participado tanto en el desarrollo de software como todas las herramientas tecnológicas y de marketing necesarias,
+          para el éxito del proyecto, de esta manera queremos demostrar nuestro alto grado de profesionalidad y vinculación con nuestros clientes. 
+        </p>
+
+        <p>Además, en este portafolio conforme conozcas de nosotros también aprenderás de muchos términos  acerca de la tecnología que usamos, en caso de que no los conozcas. Y si ya los conoces verás que los utilizamos y 
+          nuestras prácticas son las mejoras. 
+        </p>
+
+        <p>Finalmente, tenemos algunos proyectos de código abierto que ponemos a tu disposición para que los uses en caso de que te sirvan. Aunque la mayoría son productos comerciales, cuyo código está protegido, pero si necesitas algun demo de estos productos con gusto te lo facilitaremos. 
+        </p>
+       </div>
+     </div>
+  </div>
+
+
+    <img *ngIf="showArrow" [@fadeInOnEnter] [@fadeOutOnLeave] class="curvedarrow" src="{{path+'arrow-curved.png'}}">
+
 
 
 

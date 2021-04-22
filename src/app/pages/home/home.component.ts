@@ -13,16 +13,21 @@ import {
   fadeInRightAnimation,
   fadeInUpAnimation,
   fadeInUpOnEnterAnimation,
+  fadeOutOnLeaveAnimation,
+  fadeOutUpOnLeaveAnimation,
   rubberBandAnimation,
   zoomInAnimation,
 } from 'angular-animations';
 import { ParticlesService } from '../../services/particles.service';
+import {environment} from '../../../environments/environment';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   animations: [
+    fadeOutOnLeaveAnimation(),
     fadeInUpAnimation(),
     fadeInUpOnEnterAnimation(),
     fadeInOnEnterAnimation(),
@@ -31,6 +36,7 @@ import { ParticlesService } from '../../services/particles.service';
     zoomInAnimation()
   ],
 })
+
 export class HomeComponent implements OnInit {
   @ViewChild('diffImage', { static: false }) private diffImage:
     | ElementRef<HTMLDivElement>
@@ -55,7 +61,8 @@ export class HomeComponent implements OnInit {
   onScreen: boolean = true;
   particlesOptions;
   showParticles: boolean = true;
-
+  path = environment.assets_url;
+  showArrow=false;
   elements: any = [
     {
       image: '../../../assets/mobileDev.png',
@@ -166,5 +173,13 @@ export class HomeComponent implements OnInit {
 
   getUrl(url: string): any {
     return 'url(' + url + ')' + ' center center/cover no-repeat';
+  }
+
+  arrowEffect(){
+    this.showArrow = true
+    setTimeout(() => {
+        this.showArrow = false
+        this.changeDetectorRef.detectChanges()
+    }, 2000);
   }
 }
