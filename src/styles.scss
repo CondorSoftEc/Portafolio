@@ -7,28 +7,29 @@
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/utilities";// add css utilities
+@import "~bootstrap/scss/utilities"; // add css utilities
 
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 .example-icon {
-    padding: 0 14px;
-  }
-  
+  padding: 0 14px;
+}
+
 .example-spacer {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 
-
-::ng-deep .mat-expansion-panel-header{
+::ng-deep .mat-expansion-panel-header {
   transition: height 2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-
-.mat-expansion-indicator::after{
+.mat-expansion-indicator::after {
   color: gray;
 }
-
