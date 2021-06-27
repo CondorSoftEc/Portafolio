@@ -1,11 +1,25 @@
-import {animate, state, style, transition, trigger} from '@angular/animations';
-import {BreakpointObserver} from '@angular/cdk/layout';
-import {ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
-import {MatSidenav} from '@angular/material/sidenav';
-import { Router , RouterEvent, NavigationEnd } from '@angular/router';
-import {Theme} from './models/color-scheme';
-import {ColorsService} from './services/colors.service';
+import { MatSidenav } from '@angular/material/sidenav';
+import { Router, RouterEvent, NavigationEnd } from '@angular/router';
+import { Theme } from './models/color-scheme';
+import { ColorsService } from './services/colors.service';
 import { ParticlesService } from './services/particles.service';
 
 export type FadeState = 'open' | 'closed';
@@ -29,20 +43,19 @@ export type FadeState = 'open' | 'closed';
         })
       ),
       transition('open => closed', [animate('500ms ease-out')]),
-      transition('* => open', [animate('500ms ease-out')])
-    ])
+      transition('* => open', [animate('500ms ease-out')]),
+    ]),
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   @ViewChild(MatSidenav) sidenav!: MatSidenav;
   @ViewChild('colorCard') input!: ElementRef<HTMLInputElement>;
   @ViewChild('buttonSettings') buttonSettings!: ElementRef<HTMLInputElement>;
 
   panelOpenState = false;
   isOpen = false;
-  path='';
+  path = '';
 
   state!: FadeState;
   // tslint:disable-next-line: variable-name
@@ -65,7 +78,7 @@ export class AppComponent implements OnInit{
   }
 
   onAnimationEvent(event: any) {
-    if ((event.fromState === 'open') && event.toState === 'closed') {
+    if (event.fromState === 'open' && event.toState === 'closed') {
       this._show = false;
     }
   }
@@ -74,33 +87,34 @@ export class AppComponent implements OnInit{
     {
       name: 'Acerca de nosotros',
       path: 'home',
-      icon: 'contact_page'
+      icon: 'contact_page',
     },
     {
       name: ' Portafolio',
       path: 'portafolio',
-      icon: 'folder_open'
+      icon: 'folder_open',
     },
     {
       name: 'Tecnología que usamos',
       path: 'technology',
-      icon: 'devices'
-    }
+      icon: 'devices',
+    },
   ];
   colors: Theme;
 
-
-  constructor(private observer: BreakpointObserver, 
-    public colorsService: ColorsService, 
+  constructor(
+    private observer: BreakpointObserver,
+    public colorsService: ColorsService,
     private router: Router,
-    public particlesService: ParticlesService) {
+    public particlesService: ParticlesService
+  ) {
     this.colors = colorsService.theme;
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        this.path = event.url
+        this.path = event.url;
       }
     });
   }
@@ -114,13 +128,6 @@ export class AppComponent implements OnInit{
         this.sidenav.open();
       }
     });
-  }
-
-  @HostListener('document:click', ['$event'])
-  clickout(event: any) {
-    if (!this.input.nativeElement.contains(event.target) && this.show == true && !this.buttonSettings.nativeElement.contains(event.target)) {
-      this.show = false;
-    }
   }
 
   changeShow() {
@@ -140,17 +147,17 @@ export class AppComponent implements OnInit{
       this.colors.base = this.colorsService.darkBase.base;
       this.colors.surface = this.colorsService.darkBase.surface;
     }
-    this.particlesService.generateParticles()
+    this.particlesService.generateParticles();
     localStorage.setItem('class', JSON.stringify(this.colors));
   }
 
-  openUrl(page: string){
-    if (page == 'facebook'){
-      window.open('https://www.facebook.com/condorsoft.ec','_blank')
-    } else if (page == 'linkedin'){
-      window.open('https://www.linkedin.com/company/68829683','_blank')
+  openUrl(page: string) {
+    if (page == 'facebook') {
+      window.open('https://www.facebook.com/condorsoft.ec', '_blank');
+    } else if (page == 'linkedin') {
+      window.open('https://www.linkedin.com/company/68829683', '_blank');
     } else {
-      window.open('https://www.condor-soft.com', '_blank')
+      window.open('https://www.condor-soft.com', '_blank');
     }
   }
 }

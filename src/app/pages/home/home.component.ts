@@ -19,8 +19,7 @@ import {
   zoomInAnimation,
 } from 'angular-animations';
 import { ParticlesService } from '../../services/particles.service';
-import {environment} from '../../../environments/environment';
-
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -33,10 +32,9 @@ import {environment} from '../../../environments/environment';
     fadeInOnEnterAnimation(),
     fadeInRightAnimation(),
     fadeInLeftAnimation(),
-    zoomInAnimation()
+    zoomInAnimation(),
   ],
 })
-
 export class HomeComponent implements OnInit {
   @ViewChild('diffImage', { static: false }) private diffImage:
     | ElementRef<HTMLDivElement>
@@ -51,10 +49,11 @@ export class HomeComponent implements OnInit {
   @ViewChild('diffContent2', { static: false }) private diffContent2:
     | ElementRef<HTMLDivElement>
     | undefined;
-    @ViewChild('process', { static: false }) private process:
+  @ViewChild('process', { static: false }) private process:
     | ElementRef<HTMLDivElement>
     | undefined;
 
+  showChat: boolean = false;
   isTestDivScrolledIntoView!: boolean;
   theme: Theme;
   test: any;
@@ -62,7 +61,7 @@ export class HomeComponent implements OnInit {
   particlesOptions;
   showParticles: boolean = true;
   path = environment.assets_url;
-  showArrow=false;
+  showArrow = false;
   elements: any = [
     {
       image: '../../../assets/mobileDev.png',
@@ -102,7 +101,7 @@ export class HomeComponent implements OnInit {
       image: '../../../assets/support.png',
       thumbImage: '../../../assets/support.png',
       title: 'Soporte al Cliente',
-    }
+    },
   ];
   showDiffImage: boolean = false;
   showDiffContent: boolean = false;
@@ -175,11 +174,11 @@ export class HomeComponent implements OnInit {
     return 'url(' + url + ')' + ' center center/cover no-repeat';
   }
 
-  arrowEffect(){
-    this.showArrow = true
+  arrowEffect() {
+    this.showArrow = true;
     setTimeout(() => {
-        this.showArrow = false
-        this.changeDetectorRef.detectChanges()
+      this.showArrow = false;
+      this.changeDetectorRef.detectChanges();
     }, 2000);
   }
 }
